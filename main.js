@@ -1,6 +1,7 @@
 // Modules to control application life and create native browser window
 const {app, BrowserWindow} = require('electron')
 const path = require('path')
+const proto = require('./marswrapper.node')
 
 function createWindow () {
   // Create the browser window.
@@ -23,6 +24,10 @@ function createWindow () {
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.whenReady().then(() => {
+  console.log('app ready!')
+  let cid = proto.getClientId()
+  console.log('client id is ', cid)
+
   createWindow()
 
   app.on('activate', function () {
