@@ -25,8 +25,12 @@ function createWindow () {
 // Some APIs can only be used after this event occurs.
 app.whenReady().then(() => {
   console.log('app ready!')
+  let userId = 'SkppUpPP';
+  let token = 'OOVf3IG0+Lwuvp/APioc98YszNAZfrU8RNyVSVJoOI51eOp40aeR13OtjSdCYohhJPb5nVQcw5RAdwWxw1AAXOjBLxtt/FDuvGLOZKPgnge/KAKFvKseeNzUQn/RB/6ieUCeq01aB5cfJInWiby8gZxofW8CpB9FDsawqBgFKFI=';
+  //cid = 182DB2AC-6792-4A2F-BDDC-04A57826F3A4
   let cid = proto.getClientId()
   console.log('client id is ', cid)
+  proto.connect(userId, token);
 
   createWindow()
 
